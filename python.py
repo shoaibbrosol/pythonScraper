@@ -16,10 +16,11 @@ Gross  = []
 names = []
 
 for ul in links:
- res = requests.get("https://www.imdb.com"+ul)
-soup = BeautifulSoup(res.content, 'html.parser')
-names.append(soup.find('div',class_='title_wrapper').h1.text)
+	res = requests.get("https://www.imdb.com"+ul)
+	soup = BeautifulSoup(res.content, 'html.parser')
+	names.append(soup.find('div',class_='title_wrapper').h1.text)
 
+print(names)
 
 test_df = pd.DataFrame({'movie': names,
 
